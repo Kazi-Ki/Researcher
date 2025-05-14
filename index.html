@@ -205,9 +205,14 @@
   position: relative;
   padding-right: 1.5em;
 }
-
-
-.faq details[open] summary::after {
+    .faq summary::after {
+  content: " ▼"; /* 矢印 */
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 0.3s ease;
+}
+    .faq details[open] summary::after {
   transform: rotate(180deg); /* 矢印回転 */
 }
 
