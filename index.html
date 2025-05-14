@@ -234,6 +234,16 @@
   padding-left: 1em;
   color: #333;
 }
+    .center-message {
+  text-align: center; /* メッセージを横方向に中央寄せ */
+  margin-bottom: 1em; /* メッセージとQ&Aの間にスペース */
+}
+
+.center-message p {
+  font-size: 1.2em; /* 少し大きめのフォント */
+  color: #555; /* テキスト色は少し薄いグレー */
+  font-style: italic; /* メッセージをイタリック体に */
+}
 
 
   </style>
@@ -242,7 +252,11 @@
 <body>
 
   <h1>研究係</h1>
-  <p>               このページは制作中です。あくまで表示されている文章はサンプルです</p>
+ 
+  <div class="center-message">
+  <p>このページは制作中です。あくまで表示されている文章はサンプルです。</p>
+</div>
+
   <div class="button-container">
     <button onclick="toggleContent('social')">社会部</button>
     <button onclick="toggleContent('biology')">生物部</button>
