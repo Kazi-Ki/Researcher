@@ -206,13 +206,6 @@
   padding-right: 1.5em;
 }
 
-.faq summary::after {
-  content: " ▼"; /* 矢印 */
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: transform 0.3s ease;
-}
 
 .faq details[open] summary::after {
   transform: rotate(180deg); /* 矢印回転 */
@@ -221,7 +214,7 @@
 .faq p {
   margin-top: 0.5em;
   padding-left: 1em;
-  color: #333;
+  color: #ccc;
 }
     .center-message {
   text-align: center; /* メッセージを横方向に中央寄せ */
