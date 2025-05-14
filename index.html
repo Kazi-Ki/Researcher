@@ -198,12 +198,16 @@
 }
 
 .faq details {
-  background: #f0f0f0;
+  background-color: #f0f0f0; /* 背景色を薄いグレーに */
   border-radius: 8px;
   padding: 1em;
   margin-bottom: 1em;
-  border: 1px solid #ccc;
+  border: 1px solid #ccc; /* ボーダー色を設定 */
   transition: background 0.3s ease;
+}
+
+.faq details[open] {
+  background-color: #e0e0e0; /* 開いたときの背景色 */
 }
 
 .faq summary {
@@ -214,7 +218,7 @@
 }
 
 .faq summary::after {
-  content: "▼";
+  content: " ▼"; /* 矢印を追加 */
   position: absolute;
   right: 0;
   top: 0;
@@ -222,7 +226,7 @@
 }
 
 .faq details[open] summary::after {
-  transform: rotate(180deg);
+  transform: rotate(180deg); /* 開いたときに矢印が回転 */
 }
 
 .faq p {
@@ -230,6 +234,7 @@
   padding-left: 1em;
   color: #333;
 }
+
 
   </style>
 </head>
