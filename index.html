@@ -196,37 +196,28 @@
 .balloon {
   position   : relative;                /* 指定した分だけ相対的に移動 */
   padding: 10px;                        /* テキストの前後の余白 */
-  background-color: rgba(153, 153, 153, 0.55);       /* 背景色（透明度） */
+  background-color: rgba(0, 0, 0, 0.68);       /* 背景色（透明度） */
   width:300px;                          /* 吹き出し全体の幅 */
   left : 50%;                           /* 表示位置 */
   transform: translate(-50%);           /* 表示位置の調整 */
 }
 .balloon:after{
-  border-right: 20px solid rgba(153, 153, 153, 0.55);  /* 吹き出し口の幅・色 */
-  border-top: 10px solid transparent;     /* 吹き出し口の高さ１／２ */
-  border-bottom: 10px solid transparent;  /* 吹き出し口の高さ１／２ */
-  left: -20px;                            /* 吹き出し口の位置調整 */
-  top : 60%;                              /* 吹き出し口の縦位置 */
+  border-bottom: 20px solid rgba(0, 0, 0, 0.68); /* 吹き出し口の高さ・色 */
+  border-left: 10px solid transparent;    /* 吹き出し口の幅１／２ */
+  border-right: 10px solid transparent;   /* 吹き出し口の幅１／２ */
+  top: -20px;                             /* 吹き出し口の位置調整 */
+  left : 3%;                      /* 吹き出し口の横位置 */
   content: "";                       /* コンテンツの挿入 */
   position: absolute;                /* 親要素を基準 */
 }
 </style>
+ページTOP
 </head>
 
 <body>
 
   <h1>研究係</h1>
-  <div style="
-    text-align: center;
-    margin-top: 10vh;
-    color: white;
-    font-size: 1.2em;
-  ">
-    このページは制作中です<br> あくまで表示されている文章はサンプルです
-  </div>
-
-  <p class="balloon">テキスト></p>
-
+  <p class="balloon">このページは制作中です。あくまで表示されている文章はサンプルです</p>
   <div class="button-container">
     <button onclick="toggleContent('social')">社会部</button>
     <button onclick="toggleContent('biology')">生物部</button>
