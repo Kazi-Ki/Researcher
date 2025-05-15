@@ -218,7 +218,27 @@
     data-page-title="Homepage"
     data-theme="dark"></div>
   <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+  <script>
+  document.querySelectorAll('[data-modal-target]').forEach(item => {
+    item.addEventListener('click', () => {
+      const modalId = item.getAttribute('data-modal-target');
+      const modal = document.getElementById(modalId);
+      if (modal) modal.style.display = 'block';
+    });
+  });
 
+  document.querySelectorAll('[data-close]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.modal').style.display = 'none';
+    });
+  });
+
+  window.addEventListener('click', e => {
+    if (e.target.classList.contains('modal')) {
+      e.target.style.display = 'none';
+    }
+  });
+</script>
 
 </body>
 
