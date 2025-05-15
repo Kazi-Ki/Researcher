@@ -162,41 +162,37 @@
     <p>基本は自由！でも先生と相談しながら進めるとスムーズ！</p>
   </details>
 </div>
-  <!-- 活動記録セクション -->
-<section id="activities">
+
+  <section id="activity-records">
   <h2>活動記録</h2>
   <ul>
-    <li class="activity-item" data-modal="modal-may">2025年5月</li>
-    <li class="activity-item" data-modal="modal-april">2025年4月</li>
-    <li class="activity-item" data-modal="modal-march">2025年3月</li>
+    <li data-modal-target="modal-may" class="activity-card">
+      <h3>2025年5月</h3>
+      <p>新しい自転車を購入しました。</p>
+    </li>
+    <li data-modal-target="modal-apr" class="activity-card">
+      <h3>2025年4月</h3>
+      <p>研究係のホームページをリニューアルしました。</p>
+    </li>
   </ul>
+
+  <!-- モーダル内容 -->
+  <div class="modal" id="modal-may">
+    <div class="modal-content">
+      <span class="close" data-close>&times;</span>
+      <h2>2025年5月の詳細</h2>
+      <p>この月には新しい自転車を購入し、快適な通学環境を整えました。</p>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-apr">
+    <div class="modal-content">
+      <span class="close" data-close>&times;</span>
+      <h2>2025年4月の詳細</h2>
+      <p>研究係のホームページを大幅にリニューアルし、より見やすくしました。</p>
+    </div>
+  </div>
 </section>
-
-<!-- モーダルウィンドウたち -->
-<div class="modal" id="modal-may">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>2025年5月の活動詳細</h3>
-    <p>研究発表会に向けて準備中。発表テーマが決まりました！</p>
-  </div>
-</div>
-
-<div class="modal" id="modal-april">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>2025年4月の活動詳細</h3>
-    <p>地域交流イベント大成功！たくさんの人が来てくれたよ！</p>
-  </div>
-</div>
-
-<div class="modal" id="modal-march">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>2025年3月の活動詳細</h3>
-    <p>年度末まとめ会で、次年度の方針も発表されました！</p>
-  </div>
-</div>
-
 
  <script src="script.js"></script>
  
