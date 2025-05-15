@@ -40,3 +40,29 @@
         }, 500);
       });
     }
+
+  // 活動記録の各項目にクリックイベントを追加
+  document.querySelectorAll('.activity-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const modalId = item.getAttribute('data-modal');
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.style.display = 'block';
+      }
+    });
+  });
+
+  // モーダルの閉じるボタンにクリックイベントを追加
+  document.querySelectorAll('.close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', () => {
+      closeBtn.closest('.modal').style.display = 'none';
+    });
+  });
+
+  // モーダルの外側をクリックしたらモーダルを閉じる
+  window.addEventListener('click', event => {
+    if (event.target.classList.contains('modal')) {
+      event.target.style.display = 'none';
+    }
+  });
+
