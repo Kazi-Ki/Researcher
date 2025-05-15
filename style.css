@@ -108,6 +108,27 @@ body {
       font-size: 3em;
       margin-bottom: 30px;
     }
+#activity-records ul {
+  display: flex;
+  gap: 1em; /* カード間の余白 */
+  padding: 0;
+  list-style: none;
+}
+
+#activity-records ul li.activity-card {
+  background: #eee;
+  padding: 1em;
+  border-radius: 8px;
+  flex: 1; /* 横幅均等 */
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+#activity-records ul li.activity-card:hover {
+  transform: scale(1.05);
+}
+
 
     @media (max-width: 600px) {
       .button-container button {
