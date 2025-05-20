@@ -3,7 +3,291 @@
   <meta charset="UTF-8" />
   <title>研究係ホームページ</title>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css">
+  <style>body {
+      background-color: #111;
+      color: #fff;
+      font-family: 'Zen Maru Gothic', sans-serif;
+      margin: 0;
+      padding: 20px;
+      font-size: 1.2em;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 5em;
+      margin-bottom: 60px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 18px 36px;
+      margin: 12px;
+      font-size: 1.4em;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    .content-container {
+      display: none;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      transition: opacity 0.5s, height 0.5s;
+      margin-bottom: 40px;
+    }
+
+    .content-box {
+      background-color: #222;
+      padding: 24px;
+      margin: 24px auto;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 800px;
+      border: 1px solid #444;
+    }
+
+    .content-box h3 {
+      margin-top: 0;
+      font-size: 1.8em;
+    }
+
+    .activity-cards {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px 0;
+      scroll-snap-type: x mandatory;
+    }
+
+    .activity-card {
+      flex: 0 0 auto;
+      width: 280px;
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 16px;
+      scroll-snap-align: start;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .activity-card h4 {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      color: #aaf;
+    }
+
+    .activity-card p {
+      font-size: 1em;
+      color: #ccc;
+    }
+
+    #other .content-box {
+      background-color: #1e1e2e;
+      border: 1px solid #4c4c6d;
+      color: #d0d0ff;
+      box-shadow: 0 0 10px rgba(100, 100, 255, 0.3);
+    }
+
+    #other .content-box h3 {
+      color: #aabaff;
+    }
+
+    @media (max-width: 600px) {
+      .button-container button {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+      }
+      h1 {
+        font-size: 3em;
+      }
+    }
+
+    .members-section {
+      margin: 80px auto;
+      text-align: center;
+      color: #fff;
+    }
+
+    .members-section h2 {
+      font-size: 3em;
+      margin-bottom: 40px;
+    }
+
+    .member-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .member-card {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 20px;
+      width: 220px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .member-card:hover {
+      transform: scale(1.05);
+    }
+
+    .member-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      border: 2px solid #555;
+      margin-bottom: 15px;
+    }
+
+    .member-card h4 {
+      color: #aaf;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+
+    .member-card p {
+      font-size: 0.95em;
+      color: #ccc;
+    }
+
+    .members-section .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+      scroll-snap-type: x mandatory;
+      justify-content: flex-start;
+    }
+
+    .members-section .member-card {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+    }
+    .faq details {
+  border-radius: 8px;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  transition: background 0.3s ease;
+}
+
+.faq summary {
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  padding-right: 1.5em;
+}
+    .faq summary::after {
+  content: " ▼"; /* 矢印 */
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 0.3s ease;
+}
+    .faq details[open] summary::after {
+  transform: rotate(180deg); /* 矢印回転 */
+}
+
+.faq p {
+  margin-top: 0.5em;
+  padding-left: 1em;
+  color: #ccc;
+}
+    .faq h2 {
+      font-size: 3em;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .center-message {
+  text-align: center; /* メッセージを横方向に中央寄せ */
+  margin-bottom: 1em; /* メッセージとQ&Aの間にスペース */
+}
+
+.center-message p {
+  font-size: 1.2em; /* 少し大きめのフォント */
+  color: #ccc; /* テキスト色は少し薄いグレー */
+  font-style: italic; /* メッセージをイタリック体に */
+}
+ /* モーダル本体（背景） */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* 半透明の黒 */
+}
+
+/* モーダルの中身 */
+.modal-content {
+  background-color: #fff;
+  color: #000;
+  margin: 10% auto;
+  padding: 2em;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* 閉じるボタン */
+.close {
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+}
+.scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.card-list {
+  display: flex;
+  gap: 1em;
+  padding: 1em;
+  list-style: none;
+  margin: 0;
+}
+
+.activity-card {
+  min-width: 200px;
+  flex: 0 0 auto;
+  background: #eee;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.activity-card:hover {
+  transform: scale(1.05);
+}
+  </style>
 </head>
 
 <body>
